@@ -6,6 +6,7 @@ static char *stylefile      = ".surf/fb-style.css";
 static char *scriptfile     = ".surf/fb-script.js";
 static char *cookiefile     = ".surf/fb-cookies.txt";
 static char *proxy_uri      = "http://fbproxy.vpn.leukensis.org:8080";
+static char *default_url    = "http://www.facebook.com";
 static time_t sessiontime   = 3600;
 #define HIDE_BACKGROUND FALSE
 
