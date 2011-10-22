@@ -6,7 +6,7 @@ include config.mk
 SRC = surf.c
 OBJ = ${SRC:.c=.o}
 
-all: options surf
+all: options fbsurf
 
 options:
 	@echo surf build options:
@@ -24,13 +24,13 @@ config.h:
 	@echo creating $@ from config.def.h
 	@cp config.def.h $@
 
-surf: ${OBJ}
+fbsurf: ${OBJ}
 	@echo CC -o $@
 	@${CC} -o $@ surf.o ${LDFLAGS}
 
 clean:
 	@echo cleaning
-	@rm -f surf ${OBJ} surf-${VERSION}.tar.gz
+	@rm -f fbsurf ${OBJ} surf-${VERSION}.tar.gz
 
 dist: clean
 	@echo creating dist tarball
@@ -44,7 +44,7 @@ dist: clean
 install: all
 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
-	@cp -f surf ${DESTDIR}${PREFIX}/bin
+	@cp -f fbsurf ${DESTDIR}${PREFIX}/bin
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/surf
 	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
@@ -53,7 +53,7 @@ install: all
 
 uninstall:
 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
-	@rm -f ${DESTDIR}${PREFIX}/bin/surf
+	@rm -f ${DESTDIR}${PREFIX}/bin/fbsurf
 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/surf.1
 
