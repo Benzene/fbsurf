@@ -1,7 +1,9 @@
 surf - simple webkit-based browser
 ==================================
 surf is a simple Web browser based on WebKit/GTK+.
+The vanilla version is available from http://surf.suckless.org
 
+This is just my slightly tweaked version.
 
 Requirements
 ------------
