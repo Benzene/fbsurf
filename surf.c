@@ -700,7 +700,7 @@ setup(void) {
 	g_signal_connect_after(G_OBJECT(s), "request-started", G_CALLBACK(newrequest), NULL);
 
 	/* proxy */
-	if((proxy = getenv("http_proxy")) && strcmp(proxy, "")) {
+	if((proxy = proxy_uri) && strcmp(proxy, "")) {
 		new_proxy = g_strrstr(proxy, "http://") ? g_strdup(proxy) :
 			g_strdup_printf("http://%s", proxy);
 		puri = soup_uri_new(new_proxy);
