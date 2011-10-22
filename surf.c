@@ -834,7 +834,10 @@ main(int argc, char *argv[]) {
 			usage();
 		}
 	}
-	if(i < argc)
+
+	if(strcmp(default_url, ""))
+		arg.v = default_url;
+	else if(i < argc)
 		arg.v = argv[i];
 	setup();
 	newclient();

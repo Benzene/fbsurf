@@ -6,6 +6,7 @@ static char *stylefile      = ".surf/style.css";
 static char *scriptfile     = ".surf/script.js";
 static char *cookiefile     = ".surf/cookies.txt";
 static char *proxy_uri      = "";
+static char *default_url    = "";
 static time_t sessiontime   = 3600;
 #define HIDE_BACKGROUND FALSE
 
